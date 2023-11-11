@@ -1,118 +1,152 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+const Stack = createNativeStackNavigator();
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { useFonts } from "expo-font";
+import Frame from "./screens/Frame";
+import Frame1 from "./screens/Frame1";
+import Frame2 from "./screens/Frame2";
+import Frame3 from "./screens/Frame3";
+import Frame4 from "./screens/Frame4";
+import Frame5 from "./screens/Frame5";
+import Frame6 from "./screens/Frame6";
+import Frame7 from "./screens/Frame7";
+import Frame8 from "./screens/Frame8";
+import Frame9 from "./screens/Frame9";
+import Frame10 from "./screens/Frame10";
+import Frame11 from "./screens/Frame11";
+import Frame12 from "./screens/Frame12";
+import Frame13 from "./screens/Frame13";
+import Frame14 from "./screens/Frame14";
+import Frame15 from "./screens/Frame15";
+import Frame16 from "./screens/Frame16";
+import Frame17 from "./screens/Frame17";
+import Frame18 from "./screens/Frame18";
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { View, Text, Pressable, TouchableOpacity } from "react-native";
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const App = () => {
+  const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+  const [fontsLoaded, error] = useFonts({
+    "Inter-Regular": require("./assets/fonts/Inter-Regular.ttf"),
+    "Inter-Medium": require("./assets/fonts/Inter-Medium.ttf"),
+    "Inter-SemiBold": require("./assets/fonts/Inter-SemiBold.ttf"),
+    "Inter-Bold": require("./assets/fonts/Inter-Bold.ttf"),
+    "PlusJakartaSans-Medium": require("./assets/fonts/PlusJakartaSans-Medium.ttf"),
+    "PlusJakartaSans-SemiBold": require("./assets/fonts/PlusJakartaSans-SemiBold.ttf"),
+    "PlusJakartaSans-Bold": require("./assets/fonts/PlusJakartaSans-Bold.ttf"),
+    "Lato-Bold": require("./assets/fonts/Lato-Bold.ttf"),
+  });
 
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  if (!fontsLoaded && !error) {
+    return null;
+  }
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <>
+      <NavigationContainer>
+        {hideSplashScreen ? (
+          <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen
+              name="Frame"
+              component={Frame}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame1"
+              component={Frame1}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame2"
+              component={Frame2}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame3"
+              component={Frame3}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame4"
+              component={Frame4}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame5"
+              component={Frame5}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame6"
+              component={Frame6}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame7"
+              component={Frame7}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame8"
+              component={Frame8}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame9"
+              component={Frame9}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame10"
+              component={Frame10}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame11"
+              component={Frame11}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame12"
+              component={Frame12}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame13"
+              component={Frame13}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame14"
+              component={Frame14}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame15"
+              component={Frame15}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame16"
+              component={Frame16}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame17"
+              component={Frame17}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Frame18"
+              component={Frame18}
+              options={{ headerShown: false }}
+            />
+          </Stack.Navigator>
+        ) : null}
+      </NavigationContainer>
+    </>
   );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
+};
 export default App;
